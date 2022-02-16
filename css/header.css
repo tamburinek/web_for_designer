@@ -1,0 +1,172 @@
+header {
+  overflow: hidden;
+  background-color: var(--header);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top:0;
+  font-family: 'Satisfy', cursive;
+  z-index: 2;
+}
+
+header a {
+  float: left;
+  color: var(--text);
+  text-align: center;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 25px;
+  border-radius: 8px;
+}
+
+input[type=submit]:hover {
+ background-color: var(--hover);
+}
+
+header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+  float: var(--strana_image);
+}
+
+.header-right :hover {
+  background-color: var(--hover);
+  color: var(--bila);
+}
+
+header a.active {
+  background-color: var(--zelenabarva);
+  color: var(--nadpis);
+}
+
+.header-right {
+  float: var(--strana_nav);
+}
+
+body {
+  margin: 0;
+}
+
+input[type=submit] {
+ background-color: var(--potvrdit);
+}
+
+
+.prehoz a {
+  color:var(--odkaz);
+}
+
+/*light mode*/
+body{
+    height: 100%;
+
+    --primary_color: white;
+    --secondary_color: #EBEBEB;
+    --font_color: #333333;
+    --zelenabarva: black;
+    --header:#e6e6e6;
+    --text:black;
+    --nadpis:white;
+    --potvrdit:black;
+    --strana_image:left;
+    --strana_nav:right;
+    --hover:#66bb6a;
+    --odkaz:black;
+    --bila:black;
+}
+/*dark mode*/
+body.dark-theme{
+    --primary_color: #333333;
+    --secondary_color: #434343;
+    --font_color: white;
+    --zelenabarva: #66bb6a;
+    --header:#4d4d4d;
+    --text:white;
+    --nadpis:black;
+    --potvrdit:#66bb6a;
+    --strana_image:right;
+    --strana_nav:left;
+    --hover:black;
+    --odkaz:#66bb6a;
+    --bila:white;
+}
+
+body{
+    background-color: var(--primary_color);
+    color: var(--font_color);
+}
+/*modelování switche do finální podoby*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position:fixed;
+  top:120px;
+  right:18px;
+
+  em {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color:#66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*posunutí switche při zmenšení okna*/
+@media only screen and (max-width: 850px) {
+  .theme-switch-wrapper {
+    top:200px;
+    right:18px;
+  }
+}
+/*smazání switche při tisku*/
+@media print {
+  .theme-switch-wrapper{
+    display: none;
+  }
+}
