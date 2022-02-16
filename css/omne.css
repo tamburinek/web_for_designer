@@ -1,0 +1,24 @@
+html {
+  overflow:auto;
+}
+
+.main {
+  margin: 100px 80px 0px 80px;
+}
+
+.uvodka {
+  width: 30%;
+  float:left;
+  margin: 60px 80px;
+}
+
+.text {
+  padding: 130px 80px;
+  text-align: justify;
+  letter-spacing: 2px;
+  font-family: 'Love Ya Like A Sister', cursive;
+  }
+
+p {
+  font-family: 'Indie Flower', cursive;
+}
